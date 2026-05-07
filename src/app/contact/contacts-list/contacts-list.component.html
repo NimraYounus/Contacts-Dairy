@@ -1,0 +1,17 @@
+<div class="contacts-wrapper d-flex">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="contacts-list-section">
+
+        <app-contact [contacts]="contacts" (contactSelected)="onContactSelected($event)">
+        </app-contact>
+
+    </div>
+
+    <!-- RIGHT DETAIL -->
+    <div class="contact-detail-section flex-grow-1">
+        <app-contact-details [contactId]="selectedContactId">
+        </app-contact-details>
+    </div>
+
+</div>

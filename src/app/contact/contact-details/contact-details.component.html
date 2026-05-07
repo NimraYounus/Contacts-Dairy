@@ -1,0 +1,118 @@
+<div class="contact-detail" *ngIf="contact">
+
+    <!-- HEADER -->
+    <div class="detail-header d-flex justify-content-between align-items-center p-4 border-bottom">
+
+        <div class="d-flex align-items-center gap-3">
+
+            <img [src]="contact.image" class="detail-avatar" />
+
+            <div>
+                <h5 class="mb-0 fw-semibold">{{ contact.name }}</h5>
+                <small class="text-muted">{{ contact.designation }}</small>
+            </div>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="d-flex gap-2">
+
+            <button class="btn btn-primary px-3 d-flex align-items-center gap-2">
+                <i class="bi bi-chat-dots"></i>
+                Message
+            </button>
+
+            <button class="icon-btn">
+                <i class="bi bi-telephone"></i>
+            </button>
+
+            <button class="icon-btn">
+                <i class="bi bi-share"></i>
+            </button>
+
+            <button class="icon-btn">
+                <i class="bi bi-three-dots"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="p-4 contact-detail-body">
+
+        <!-- BIO -->
+        <div class="detail-section">
+            <h6 class="section-title">Bio</h6>
+            <p class="text-muted">
+                {{ contact.bio || 'No bio available for this contact.' }}
+            </p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="detail-section">
+            <h6 class="section-title">Email</h6>
+
+            <!-- <div class="d-flex justify-content-between align-items-center mb-2" *ngFor="let email of contact.email">
+
+                <span>{{ email }}</span>
+
+                <span class="badge-primary" *ngIf="email === contact.secondaryEmail">
+                    Primary
+                </span>
+
+            </div> -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span>{{ contact.email }}</span>
+            </div>
+
+            <div *ngIf="contact.secondaryEmail" class="text-muted">
+                {{ contact.secondaryEmail }}
+            </div>
+        </div>
+
+        <!-- PHONE -->
+        <div class="detail-section">
+            <h6 class="section-title">Phone</h6>
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span>{{ contact.phone }}</span>
+            </div>
+
+            <div *ngIf="contact.secondaryPhone" class="text-muted">
+                {{ contact.secondaryPhone }}
+            </div>
+        </div>
+
+        <!-- MEETING -->
+        <div class="detail-section">
+            <h6 class="section-title">Meeting</h6>
+            <a [href]="contact.meetingLink" target="_blank" class="text-primary">
+                {{ contact.meetingLink }}
+            </a>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="detail-section">
+            <h6 class="section-title">Social</h6>
+
+            <div class="d-flex gap-2">
+
+                <button class="social-btn"><i class="bi bi-facebook"></i></button>
+                <button class="social-btn"><i class="bi bi-twitter"></i></button>
+                <button class="social-btn"><i class="bi bi-linkedin"></i></button>
+                <button class="social-btn"><i class="bi bi-google"></i></button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- EMPTY STATE -->
+<div class="p-5 text-center text-muted" *ngIf="!contact">
+    <i class="bi bi-person-circle fs-1"></i>
+    <p class="mt-2">Select a contact to view details</p>
+</div>

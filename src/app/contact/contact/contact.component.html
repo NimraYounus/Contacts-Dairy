@@ -1,0 +1,69 @@
+<!-- HEADER -->
+<div class="contacts-header d-flex justify-content-between align-items-center p-3 border-bottom">
+
+    <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-light btn-sm">
+            <i class="bi bi-list"></i>
+        </button>
+        <h6 class="mb-0">Contacts</h6>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button class="btn btn-light btn-sm">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="btn btn-light btn-sm">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+</div>
+<!-- SEARCH -->
+<div class="p-3 border-bottom">
+
+    <small class="text-muted">Search for a contact</small>
+
+    <div class="search-box mt-2">
+        <input type="text" placeholder="Name, email or phone number" />
+        <i class="bi bi-search"></i>
+    </div>
+
+</div>
+
+<!-- CONTACT LIST -->
+<div class="contact-item d-flex justify-content-between align-items-center" *ngFor="let contact of contacts"
+    [class.active]="selectedContact?.id === contact.id" (click)="selectContact(contact)">
+
+    <div class="d-flex align-items-center gap-3">
+
+        <div class="avatar-wrapper">
+            <img [src]="contact.image" class="contact-avatar" />
+
+            <span class="status-dot" [ngClass]="contact.status"></span>
+        </div>
+
+        <div>
+            <h6 class="mb-0">{{ contact.name }}</h6>
+            <small class="text-muted">{{ contact.designation }}</small>
+        </div>
+
+    </div>
+
+    <!-- ACTIONS RIGHT SIDE -->
+    <div class="d-flex gap-2">
+
+        <button class="icon-btn">
+            <i class="bi bi-chat"></i>
+        </button>
+
+        <button class="icon-btn">
+            <i class="bi bi-telephone"></i>
+        </button>
+
+        <button class="icon-btn">
+            <i class="bi bi-three-dots"></i>
+        </button>
+
+    </div>
+
+</div>

@@ -1,0 +1,83 @@
+.contact-detail {
+  height: 100%;
+  background: #fff;
+}
+
+/* HEADER */
+.detail-header {
+  background: white;
+}
+
+/* AVATAR */
+.detail-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 13px;
+  color: #8c8ca1;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* BODY */
+.contact-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ICON BUTTON */
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #ececf2;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #6c5ce7;
+    color: white;
+  }
+}
+
+/* SOCIAL BUTTON */
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #ececf2;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #6c5ce7;
+    color: white;
+  }
+}
+
+/* PRIMARY BADGE */
+.badge-primary {
+  background: #e9e6ff;
+  color: #6c5ce7;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* EMPTY STATE */
+.text-center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
